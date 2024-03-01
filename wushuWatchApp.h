@@ -19,6 +19,7 @@ class wushuWatchApp{
       void getSchedule(TTGOClass* ttgo);
       bool sendSchedule(String nome, String dia, String mes, String hora, String minuto);
       bool reqSchedule(String dia, String mes);
+      bool connectedPhone();
       wushuWatchApp(String deviceName);
   
 };
