@@ -14,6 +14,8 @@ class bluetoothHandler{
   
   public:
     bluetoothHandler(String newName);
+    bool connectPhone();
+    bool connectedPhone();
     bool blWrite(String msg);
     String blRead();
     bool isConnected();
