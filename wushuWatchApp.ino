@@ -3,10 +3,13 @@
 
 wushuWatchApp::wushuWatchApp(String deviceName){
     blH = new bluetoothHandler(deviceName);
+    blH->connectPhone(); 
     Serial.begin(115200);
-  
 }
 
+bool wushuWatchApp::connectedPhone(){
+  return blH->connectedPhone();
+}
 
 void wushuWatchApp::getTime(TTGOClass *ttgo){
   ttgo->tft->fillRect(0,0,240,240, TFT_BLACK);
@@ -408,6 +411,8 @@ void wushuWatchApp::getSchedule(TTGOClass* ttgo){
   }
   
 }
+
+
 
 bool wushuWatchApp::reqSchedule(String dia, String mes){
     String schedule = codeGetSch + dia + ":" + mes + ":";
